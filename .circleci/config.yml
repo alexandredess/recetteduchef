@@ -1,0 +1,16 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: cimg/php:8.4.1
+    steps:
+      - checkout
+      - run: php --version
+      - deploy:
+          provider: o2switch
+          username: deal5524_
+          password: 4bKJ-BeLD-WED?
+          workspace: sites
+          version: v1
+          branch: main
